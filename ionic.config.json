@@ -1,0 +1,7 @@
+{
+  "name": "marco-chavez",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

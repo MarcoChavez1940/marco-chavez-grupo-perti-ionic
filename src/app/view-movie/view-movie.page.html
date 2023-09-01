@@ -1,0 +1,35 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button (click)="closeModal()">Regresar</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" *ngIf="movie">
+
+  <div class="ion-padding">
+    <img [src]="movie._embedded.show.image != null ? movie._embedded.show.image.medium : 'https://static.vecteezy.com/system/resources/previews/005/337/799/original/icon-image-not-found-free-vector.jpg'">
+    <ion-item>
+      <h1>Título</h1>
+      <p>
+        {{ movie._embedded.show.name }}
+      </p>
+    </ion-item>
+
+    <ion-item>
+      <h1>Idiomas</h1>
+      <p>
+        {{ movie._embedded.show.language }}
+      </p>
+    </ion-item>
+
+    <ion-item>
+      <h1>Resumen</h1>
+      <p>
+        {{ movie._embedded.show.summary != null ? movie._embedded.show.summary : "No disponible" }}
+      </p>
+    </ion-item>
+
+  </div>
+</ion-content>

@@ -1,0 +1,12 @@
+<ion-item *ngIf="movie" [detail]="false" (click)="openModal()">
+  <div slot="start"></div>
+  <ion-thumbnail slot="start">
+    <img [src]="movie._embedded.show.image != null ? movie._embedded.show.image.medium : 'https://static.vecteezy.com/system/resources/previews/005/337/799/original/icon-image-not-found-free-vector.jpg'">
+  </ion-thumbnail>
+  <ion-label class="ion-text-wrap">
+    <h2>
+      {{ movie._embedded.show.name }}
+    </h2>
+    <h3>{{ movie._embedded.show.language }}</h3>
+  </ion-label>
+</ion-item>

@@ -1,0 +1,28 @@
+<ion-toolbar>
+  <ion-buttons slot="start">
+    <ion-button (click)="returnInitialPage()"> Regresar </ion-button>
+  </ion-buttons>
+  <ion-title>Nuevo usuario</ion-title>
+</ion-toolbar>
+
+<ion-content>
+  <form [formGroup]="registerForm">
+    <ion-item lines="full">
+      <ion-label position="floating">Nombre completo</ion-label>
+      <ion-input type="text" formControlName="fullname" required></ion-input>
+    </ion-item>
+    <ion-item lines="full">
+      <ion-label position="floating">Username</ion-label>
+      <ion-input type="text" formControlName="username" required></ion-input>
+    </ion-item>
+    <ion-item lines="full">
+      <ion-label position="floating">Contraseña</ion-label>
+      <ion-input type="password" formControlName="password" required></ion-input>
+    </ion-item>
+    <ion-row>
+      <ion-col>
+        <ion-button type="submit" [disabled]="!registerForm.valid" color="danger" expand="block" (click)="registerNewUser()">Registrarse</ion-button>
+      </ion-col>
+    </ion-row>
+  </form>
+</ion-content>
